@@ -103,7 +103,7 @@ goals_2025:
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=LUCASANGOLOTI06&show_icons=true&theme=github_dark&hide=contribs&include_all_commits=false&count_private=false&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb&text_color=8b949e&rank_icon=github"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=LUCASANGOLOTI06&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb&text_color=8b949e&rank_icon=github"/>
 
 <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LUCASANGOLOTI06&layout=compact&langs_count=7&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e"/>
 
