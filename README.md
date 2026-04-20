@@ -1,5 +1,7 @@
-Readme · MDCopiar<div align="center">
+<div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:0d1117,100:1f6feb&amp;height=200&amp;section=header&amp;text=Lucas%20Angoloti%20Cerrada&amp;fontSize=40&amp;fontColor=e6edf3&amp;fontAlignY=38&amp;desc=🎓%20ASIR%20Student%20%7C%20Future%20DevOps%20%26%20Cybersecurity%20Engineer&amp;descAlignY=58&amp;descSize=15&amp;descColor=8b949e" />
+</div>
+<div align="center">
 </div>
 <div align="center">
 Mostrar imagen
