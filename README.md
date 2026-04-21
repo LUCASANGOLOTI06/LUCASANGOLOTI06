@@ -162,5 +162,5 @@ Purposes:
 ---
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/LUCASANGOLOTI06/LUCASANGOLOTI06/main/footer.svg" width="100%" alt="footer"/>
+  <img src="https://raw.githubusercontent.com/LUCASANGOLOTI06/LUCASANGOLOTI06/main/footer_mario_v2.svg" width="100%" alt="footer"/>
 </div>
