@@ -124,7 +124,31 @@ Purposes:
 
 <div align="center">
 
-[![Trophies](https://github-profile-trophy.vercel.app/?username=LUCASANGOLOTI06&theme=darkhub&no-frame=true&no-bg=true&margin-w=6&column=6)](https://github.com/ryo-ma/github-profile-trophy)
+[![Trophies](https://github-profile-trophy-fork-two.vercel.app/?username=LUCASANGOLOTI06&theme=darkhub&no-frame=true&no-bg=true&margin-w=8&margin-h=8&column=6&rank=SSS,SS,S,AAA,AA,A,B)](https://github.com/ryo-ma/github-profile-trophy)
+
+</div>
+
+---
+
+## 🐍 Contribution Snake
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/LUCASANGOLOTI06/LUCASANGOLOTI06/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/LUCASANGOLOTI06/LUCASANGOLOTI06/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/LUCASANGOLOTI06/LUCASANGOLOTI06/output/github-snake-dark.svg" />
+</picture>
+
+</div>
+
+---
+
+## 💬 Dev Quote
+
+<div align="center">
+
+[![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)](https://github.com/piyushsuthar/github-readme-quotes)
 
 </div>
 
