@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 900 120" fill="none">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .footer {
+          width: 900px;
+          height: 120px;
+          background: #0d1117;
+          position: relative;
+          overflow: hidden;
+          font-family: 'Courier New', monospace;
+        }
+
+        /* Wave layers */
+        .waves {
+          position: absolute;
+          bottom: 0; left: 0;
+          width: 200%;
+          height: 80px;
+        }
+        .wave1 {
+          position: absolute;
+          bottom: 0; left: 0;
+          width: 200%;
+          height: 60px;
+          background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='rgba(31%2C111%2C235%2C0.15)' d='M0,30 C180,60 360,0 540,30 C720,60 900,0 1080,30 C1260,60 1440,0 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E") repeat-x;
+          background-size: 720px 60px;
+          animation: wave 8s linear infinite;
+        }
+        .wave2 {
+          position: absolute;
+          bottom: 0; left: 0;
+          width: 200%;
+          height: 50px;
+          background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath fill='rgba(88%2C166%2C255%2C0.1)' d='M0,20 C240,50 480,0 720,25 C960,50 1200,5 1440,25 L1440,50 L0,50 Z'/%3E%3C/svg%3E") repeat-x;
+          background-size: 720px 50px;
+          animation: wave 12s linear infinite reverse;
+        }
+        .wave3 {
+          position: absolute;
+          bottom: 0; left: 0;
+          width: 200%;
+          height: 40px;
+          background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40'%3E%3Cpath fill='rgba(31%2C111%2C235%2C0.08)' d='M0,15 C360,40 720,0 1080,20 C1260,30 1440,5 1440,15 L1440,40 L0,40 Z'/%3E%3C/svg%3E") repeat-x;
+          background-size: 720px 40px;
+          animation: wave 6s linear infinite;
+        }
+        @keyframes wave {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+
+        /* Circuit dots scrolling */
+        .circuit-line {
+          position: absolute;
+          top: 0; left: 0;
+          width: 200%;
+          height: 1px;
+          background: repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 20px,
+            rgba(31,111,235,0.3) 20px,
+            rgba(31,111,235,0.3) 22px,
+            transparent 22px,
+            transparent 60px,
+            rgba(88,166,255,0.5) 60px,
+            rgba(88,166,255,0.5) 64px,
+            transparent 64px,
+            transparent 80px
+          );
+          animation: circuitScroll 4s linear infinite;
+        }
+        @keyframes circuitScroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+
+        /* Top glow line */
+        .top-glow {
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, #1f6feb, #58a6ff, #1f6feb, transparent);
+          animation: glowPulse 3s ease-in-out infinite;
+        }
+        @keyframes glowPulse {
+          0%, 100% { opacity: 0.4; }
+          50%       { opacity: 1; box-shadow: 0 0 8px #58a6ff; }
+        }
+
+        /* Content */
+        .footer-content {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 8px;
+          z-index: 2;
+        }
+
+        .footer-text {
+          font-size: 12px;
+          color: #8b949e;
+          letter-spacing: 1px;
+          animation: fadeIn 1s ease forwards;
+        }
+        .footer-text span {
+          color: #58a6ff;
+          font-weight: bold;
+        }
+
+        /* Floating particles */
+        .particle {
+          position: absolute;
+          border-radius: 50%;
+          animation: floatUp linear infinite;
+          opacity: 0;
+        }
+        .particle:nth-child(1)  { width:3px; height:3px; background:#58a6ff; left:10%;  animation-duration:5s;  animation-delay:0s; }
+        .particle:nth-child(2)  { width:2px; height:2px; background:#1f6feb; left:20%;  animation-duration:7s;  animation-delay:1s; }
+        .particle:nth-child(3)  { width:4px; height:4px; background:#388bfd; left:35%;  animation-duration:6s;  animation-delay:2s; }
+        .particle:nth-child(4)  { width:2px; height:2px; background:#58a6ff; left:50%;  animation-duration:8s;  animation-delay:0.5s; }
+        .particle:nth-child(5)  { width:3px; height:3px; background:#1f6feb; left:65%;  animation-duration:5.5s;animation-delay:1.5s; }
+        .particle:nth-child(6)  { width:2px; height:2px; background:#388bfd; left:80%;  animation-duration:7s;  animation-delay:3s; }
+        .particle:nth-child(7)  { width:3px; height:3px; background:#58a6ff; left:90%;  animation-duration:6s;  animation-delay:2.5s; }
+        @keyframes floatUp {
+          0%   { bottom: 0; opacity: 0; }
+          20%  { opacity: 0.8; }
+          80%  { opacity: 0.8; }
+          100% { bottom: 100%; opacity: 0; }
+        }
+
+        /* Stats row */
+        .stats {
+          display: flex;
+          gap: 20px;
+          font-size: 10px;
+          color: #6e7681;
+          letter-spacing: 0.5px;
+        }
+        .stat { display: flex; align-items: center; gap: 4px; }
+        .stat-icon { font-style: normal; }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(5px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+      </style>
+
+      <div class="footer">
+        <div class="top-glow"></div>
+        <div class="circuit-line"></div>
+
+        <!-- Particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+        <!-- Waves -->
+        <div class="waves">
+          <div class="wave1"></div>
+          <div class="wave2"></div>
+          <div class="wave3"></div>
+        </div>
+
+        <div class="footer-content">
+          <div class="footer-text">
+            <span>~/LUCASANGOLOTI06</span> — Made with ❤️ &amp; ☕ · España 🇪🇸
+          </div>
+          <div class="stats">
+            <span class="stat"><i class="stat-icon">⚙</i> DevOps</span>
+            <span>·</span>
+            <span class="stat"><i class="stat-icon">☁</i> Cloud</span>
+            <span>·</span>
+            <span class="stat"><i class="stat-icon">🔐</i> Security</span>
+            <span>·</span>
+            <span class="stat"><i class="stat-icon">🐳</i> Docker</span>
+            <span>·</span>
+            <span class="stat"><i class="stat-icon">🐧</i> Linux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>

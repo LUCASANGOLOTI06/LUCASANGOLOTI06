@@ -1,0 +1,296 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 900 280" fill="none">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .banner {
+          width: 900px;
+          height: 280px;
+          background: #0d1117;
+          position: relative;
+          overflow: hidden;
+          font-family: 'Courier New', monospace;
+        }
+
+        /* Grid lines */
+        .grid {
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(31,111,235,0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(31,111,235,0.07) 1px, transparent 1px);
+          background-size: 40px 40px;
+          animation: gridPulse 4s ease-in-out infinite;
+        }
+        @keyframes gridPulse {
+          0%, 100% { opacity: 0.5; }
+          50% { opacity: 1; }
+        }
+
+        /* Glow orbs */
+        .orb1 {
+          position: absolute;
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(circle, rgba(88,166,255,0.15) 0%, transparent 70%);
+          top: -80px; left: -60px;
+          animation: orbFloat 6s ease-in-out infinite;
+        }
+        .orb2 {
+          position: absolute;
+          width: 250px;
+          height: 250px;
+          background: radial-gradient(circle, rgba(31,111,235,0.12) 0%, transparent 70%);
+          bottom: -60px; right: -40px;
+          animation: orbFloat 8s ease-in-out infinite reverse;
+        }
+        @keyframes orbFloat {
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(20px, -20px); }
+        }
+
+        /* Falling code columns */
+        .code-col {
+          position: absolute;
+          top: -100%;
+          font-size: 11px;
+          color: #1f6feb;
+          opacity: 0;
+          writing-mode: vertical-lr;
+          text-orientation: mixed;
+          letter-spacing: 4px;
+          animation: fall linear infinite;
+          user-select: none;
+        }
+        .code-col:nth-child(1)  { left: 3%;   animation-duration: 7s;  animation-delay: 0s;   color: #388bfd; }
+        .code-col:nth-child(2)  { left: 8%;   animation-duration: 9s;  animation-delay: 1.5s; color: #1f6feb; opacity: 0; }
+        .code-col:nth-child(3)  { left: 14%;  animation-duration: 6s;  animation-delay: 0.5s; color: #58a6ff; }
+        .code-col:nth-child(4)  { left: 20%;  animation-duration: 11s; animation-delay: 3s;   color: #1f6feb; }
+        .code-col:nth-child(5)  { left: 28%;  animation-duration: 8s;  animation-delay: 2s;   color: #388bfd; }
+        .code-col:nth-child(6)  { left: 72%;  animation-duration: 7s;  animation-delay: 1s;   color: #388bfd; }
+        .code-col:nth-child(7)  { left: 78%;  animation-duration: 10s; animation-delay: 0s;   color: #1f6feb; }
+        .code-col:nth-child(8)  { left: 83%;  animation-duration: 6s;  animation-delay: 2.5s; color: #58a6ff; }
+        .code-col:nth-child(9)  { left: 89%;  animation-duration: 9s;  animation-delay: 0.8s; color: #1f6feb; }
+        .code-col:nth-child(10) { left: 95%;  animation-duration: 7.5s;animation-delay: 1.8s; color: #388bfd; }
+        @keyframes fall {
+          0%   { top: -100%; opacity: 0; }
+          10%  { opacity: 0.6; }
+          90%  { opacity: 0.6; }
+          100% { top: 110%; opacity: 0; }
+        }
+
+        /* Scanline */
+        .scanline {
+          position: absolute;
+          left: 0; right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, rgba(88,166,255,0.4), transparent);
+          animation: scan 3s linear infinite;
+          pointer-events: none;
+        }
+        @keyframes scan {
+          0%   { top: 0; opacity: 0; }
+          10%  { opacity: 1; }
+          90%  { opacity: 1; }
+          100% { top: 100%; opacity: 0; }
+        }
+
+        /* Main content */
+        .content {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 14px;
+        }
+
+        /* Prompt line */
+        .prompt {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 12px;
+          color: #8b949e;
+          letter-spacing: 1px;
+          animation: fadeIn 1s ease forwards;
+          opacity: 0;
+        }
+        .prompt-sym {
+          color: #58a6ff;
+          font-weight: bold;
+        }
+        .prompt-path { color: #3fb950; }
+        .prompt-branch { color: #d2a8ff; }
+
+        /* Main name */
+        .name {
+          font-size: 42px;
+          font-weight: 900;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          background: linear-gradient(90deg, #58a6ff 0%, #79c0ff 40%, #388bfd 70%, #58a6ff 100%);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          animation: shimmer 3s linear infinite, slideUp 0.8s ease 0.3s both;
+        }
+        @keyframes shimmer {
+          0%   { background-position: 0% center; }
+          100% { background-position: 200% center; }
+        }
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Role badges */
+        .roles {
+          display: flex;
+          gap: 10px;
+          animation: slideUp 0.8s ease 0.6s both;
+          opacity: 0;
+        }
+        .badge {
+          padding: 4px 12px;
+          border-radius: 4px;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          border: 1px solid;
+          position: relative;
+          overflow: hidden;
+        }
+        .badge::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+          transform: translateX(-100%);
+          animation: badgeShine 3s ease infinite;
+        }
+        .badge:nth-child(1)::before { animation-delay: 0s; }
+        .badge:nth-child(2)::before { animation-delay: 1s; }
+        .badge:nth-child(3)::before { animation-delay: 2s; }
+        @keyframes badgeShine {
+          0%   { transform: translateX(-100%); }
+          30%, 100% { transform: translateX(200%); }
+        }
+        .badge-devops   { color: #58a6ff; border-color: rgba(88,166,255,0.4); background: rgba(88,166,255,0.08); }
+        .badge-cloud    { color: #79c0ff; border-color: rgba(121,192,255,0.4); background: rgba(121,192,255,0.08); }
+        .badge-security { color: #d2a8ff; border-color: rgba(210,168,255,0.4); background: rgba(210,168,255,0.08); }
+
+        /* Status bar */
+        .status {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          font-size: 11px;
+          color: #8b949e;
+          animation: slideUp 0.8s ease 0.9s both;
+          opacity: 0;
+        }
+        .status-dot {
+          width: 6px; height: 6px;
+          border-radius: 50%;
+          background: #3fb950;
+          display: inline-block;
+          margin-right: 5px;
+          animation: blink 2s ease-in-out infinite;
+        }
+        @keyframes blink {
+          0%, 100% { opacity: 1; box-shadow: 0 0 6px #3fb950; }
+          50%       { opacity: 0.3; box-shadow: none; }
+        }
+        .status-item { display: flex; align-items: center; }
+        .status-sep { color: #30363d; }
+
+        /* Cursor blink */
+        .cursor {
+          display: inline-block;
+          width: 10px; height: 18px;
+          background: #58a6ff;
+          margin-left: 4px;
+          animation: cursorBlink 1s step-end infinite;
+          vertical-align: middle;
+        }
+        @keyframes cursorBlink {
+          0%, 100% { opacity: 1; }
+          50%       { opacity: 0; }
+        }
+
+        /* Bottom border */
+        .bottom-bar {
+          position: absolute;
+          bottom: 0; left: 0; right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, #1f6feb, #58a6ff, #1f6feb, transparent);
+          animation: borderPulse 4s ease-in-out infinite;
+        }
+        @keyframes borderPulse {
+          0%, 100% { opacity: 0.5; }
+          50%       { opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+      </style>
+
+      <div class="banner">
+        <div class="grid"></div>
+        <div class="orb1"></div>
+        <div class="orb2"></div>
+
+        <!-- Falling code columns -->
+        <div class="code-col">01 10 11 00 10 01 11 00 01 10 11 00 10</div>
+        <div class="code-col">{ } &lt; &gt; // /* */ &amp;&amp; || != == =&gt;</div>
+        <div class="code-col">$ _ # @ ! % ^ &amp; * ~ ` | \ ;</div>
+        <div class="code-col">01 10 11 00 10 01 11 00 01 10 11 00 10</div>
+        <div class="code-col">kubectl docker git bash aws k8s ssh</div>
+        <div class="code-col">01 10 11 00 10 01 11 00 01 10 11 00 10</div>
+        <div class="code-col">{ } &lt; &gt; // /* */ &amp;&amp; || != == =&gt;</div>
+        <div class="code-col">$ _ # @ ! % ^ &amp; * ~ ` | \ ;</div>
+        <div class="code-col">01 10 11 00 10 01 11 00 01 10 11 00 10</div>
+        <div class="code-col">kubectl docker git bash aws k8s ssh</div>
+
+        <div class="scanline"></div>
+
+        <div class="content">
+          <div class="prompt">
+            <span class="prompt-sym">➜</span>
+            <span class="prompt-path">~/LUCASANGOLOTI06</span>
+            <span class="prompt-branch">git:(main)</span>
+            <span>✦</span>
+            <span class="cursor"></span>
+          </div>
+
+          <div class="name">Lucas Angoloti</div>
+
+          <div class="roles">
+            <span class="badge badge-devops">⚙ DevOps</span>
+            <span class="badge badge-cloud">☁ Cloud</span>
+            <span class="badge badge-security">🔐 Cybersecurity</span>
+          </div>
+
+          <div class="status">
+            <span class="status-item"><span class="status-dot"></span>Disponible</span>
+            <span class="status-sep">|</span>
+            <span class="status-item">📍 España</span>
+            <span class="status-sep">|</span>
+            <span class="status-item">🎓 ASIR</span>
+            <span class="status-sep">|</span>
+            <span class="status-item">🚀 Building the future</span>
+          </div>
+        </div>
+
+        <div class="bottom-bar"></div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
