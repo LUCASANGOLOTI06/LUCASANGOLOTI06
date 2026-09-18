@@ -47,7 +47,7 @@ Objective:
 <div align="center">
 
 [![Spanish](https://img.shields.io/badge/Español-Nativo-2ea44f?style=for-the-badge&logo=googletranslate&logoColor=white)](#)
-[![English](https://img.shields.io/badge/English-B1-0A66C2?style=for-the-badge&logo=googletranslate&logoColor=white)](#)
+[![English](https://img.shields.io/badge/English-B2-0A66C2?style=for-the-badge&logo=googletranslate&logoColor=white)](#)
 
 </div>
 
