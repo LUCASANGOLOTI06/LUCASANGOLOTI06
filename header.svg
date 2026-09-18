@@ -1,0 +1,293 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 900 280" fill="none">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .banner {
+          width: 900px;
+          height: 280px;
+          background: radial-gradient(circle at 50% 50%, #0d1117 0%, #06080c 100%);
+          position: relative;
+          overflow: hidden;
+          font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+          border: 1px solid rgba(88,166,255,0.2);
+          border-radius: 6px;
+        }
+
+        /* Cyberpunk Grid with perspective illusion */
+        .grid {
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(88,166,255,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(88,166,255,0.05) 1px, transparent 1px);
+          background-size: 30px 30px;
+          animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove {
+          0% { background-position: 0 0; }
+          100% { background-position: 30px 30px; }
+        }
+
+        /* Ambient Glow Orbs */
+        .orb1 {
+          position: absolute;
+          width: 350px;
+          height: 350px;
+          background: radial-gradient(circle, rgba(56,139,253,0.18) 0%, transparent 70%);
+          top: -100px; left: -100px;
+          filter: blur(20px);
+          animation: orbFloat1 8s ease-in-out infinite;
+        }
+        .orb2 {
+          position: absolute;
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(circle, rgba(163,113,247,0.12) 0%, transparent 70%);
+          bottom: -80px; right: -80px;
+          filter: blur(20px);
+          animation: orbFloat2 10s ease-in-out infinite;
+        }
+        @keyframes orbFloat1 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(30px, 20px) scale(1.1); }
+        }
+        @keyframes orbFloat2 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(-25px, -20px) scale(1.15); }
+        }
+
+        /* Matrix / Terminal Binary Rain Code */
+        .code-col {
+          position: absolute;
+          top: -120%;
+          font-family: 'Fira Code', 'Courier New', monospace;
+          font-size: 10px;
+          color: rgba(31,111,235,0.3);
+          writing-mode: vertical-lr;
+          text-orientation: mixed;
+          letter-spacing: 5px;
+          animation: fall linear infinite;
+          user-select: none;
+        }
+        .code-col:nth-child(1)  { left: 4%;   animation-duration: 6s;   animation-delay: 0s;   color: rgba(56,139,253,0.4); }
+        .code-col:nth-child(2)  { left: 12%;  animation-duration: 8s;   animation-delay: 2s;   color: rgba(31,111,235,0.25); }
+        .code-col:nth-child(3)  { left: 18%;  animation-duration: 5.5s; animation-delay: 0.8s; color: rgba(88,166,255,0.35); }
+        .code-col:nth-child(4)  { left: 26%;  animation-duration: 9.5s; animation-delay: 1.2s; color: rgba(163,113,247,0.3); }
+        .code-col:nth-child(5)  { left: 74%;  animation-duration: 7s;   animation-delay: 0.5s; color: rgba(56,139,253,0.4); }
+        .code-col:nth-child(6)  { left: 82%;  animation-duration: 8.5s; animation-delay: 2.5s; color: rgba(31,111,235,0.25); }
+        .code-col:nth-child(7)  { left: 90%;  animation-duration: 6.5s; animation-delay: 1.5s; color: rgba(88,166,255,0.35); }
+        @keyframes fall {
+          0%   { top: -120%; opacity: 0; }
+          15%  { opacity: 1; }
+          85%  { opacity: 1; }
+          100% { top: 120%; opacity: 0; }
+        }
+
+        /* Futuristic Scanline Effect */
+        .scanline {
+          position: absolute;
+          left: 0; right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, transparent, rgba(88,166,255,0.6), transparent);
+          box-shadow: 0 0 10px rgba(88,166,255,0.5);
+          animation: scan 4s ease-in-out infinite;
+          pointer-events: none;
+        }
+        @keyframes scan {
+          0%   { top: -5%; opacity: 0; }
+          15%  { opacity: 1; }
+          85%  { opacity: 1; }
+          100% { top: 105%; opacity: 0; }
+        }
+
+        /* Main Content Container */
+        .content {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          z-index: 10;
+        }
+
+        /* Terminal Prompt Line */
+        .prompt {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-family: 'Fira Code', 'Courier New', monospace;
+          font-size: 11px;
+          color: #8b949e;
+          background: rgba(13, 17, 23, 0.7);
+          padding: 4px 12px;
+          border-radius: 20px;
+          border: 1px solid rgba(48, 54, 61, 0.8);
+          animation: fadeInDown 0.8s ease forwards;
+          opacity: 0;
+        }
+        .prompt-sym { color: #58a6ff; font-weight: bold; }
+        .prompt-path { color: #3fb950; }
+        .prompt-branch { color: #d2a8ff; }
+
+        /* Name Typography with modern gradient */
+        .name {
+          font-size: 40px;
+          font-weight: 800;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          background: linear-gradient(135deg, #ffffff 20%, #58a6ff 60%, #a371f7 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          filter: drop-shadow(0 2px 10px rgba(88,166,255,0.3));
+          animation: zoomIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        /* Sleek Tech Badges */
+        .roles {
+          display: flex;
+          gap: 12px;
+          animation: fadeInUp 0.8s ease 0.4s both;
+          opacity: 0;
+        }
+        .badge {
+          padding: 5px 14px;
+          border-radius: 20px;
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          border: 1px solid;
+          position: relative;
+          overflow: hidden;
+          backdrop-filter: blur(4px);
+        }
+        .badge::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+          transform: translateX(-100%);
+          animation: badgeShine 3.5s ease infinite;
+        }
+        .badge:nth-child(1)::after { animation-delay: 0s; }
+        .badge:nth-child(2)::after { animation-delay: 1.2s; }
+        .badge:nth-child(3)::after { animation-delay: 2.4s; }
+        @keyframes badgeShine {
+          0%   { transform: translateX(-100%); }
+          25%, 100% { transform: translateX(200%); }
+        }
+        .badge-devops  { color: #58a6ff; border-color: rgba(88,166,255,0.3); background: rgba(88,166,255,0.06); }
+        .badge-cloud   { color: #79c0ff; border-color: rgba(121,192,255,0.3); background: rgba(121,192,255,0.06); }
+        .badge-security { color: #d2a8ff; border-color: rgba(210,168,255,0.3); background: rgba(210,168,255,0.06); }
+
+        /* Dynamic Status Bar */
+        .status {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          font-size: 11px;
+          color: #8b949e;
+          font-family: 'Fira Code', 'Courier New', monospace;
+          background: rgba(22, 27, 34, 0.6);
+          padding: 6px 16px;
+          border-radius: 6px;
+          border: 1px solid rgba(48, 54, 61, 0.5);
+          animation: fadeInUp 0.8s ease 0.6s both;
+          opacity: 0;
+        }
+        .status-dot {
+          width: 7px; height: 7px;
+          border-radius: 50%;
+          background: #3fb950;
+          display: inline-block;
+          margin-right: 6px;
+          box-shadow: 0 0 8px #3fb950;
+          animation: pulseDot 2s ease-in-out infinite;
+        }
+        @keyframes pulseDot {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.3); opacity: 0.6; }
+        }
+        .status-item { display: flex; align-items: center; }
+        .status-sep { color: #30363d; font-weight: bold; }
+
+        /* Animated Glowing Bottom Border */
+        .bottom-bar {
+          position: absolute;
+          bottom: 0; left: 0; right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #1f6feb, #58a6ff, #a371f7, #58a6ff, #1f6feb);
+          background-size: 200% auto;
+          animation: borderGlow 4s linear infinite;
+        }
+        @keyframes borderGlow {
+          0% { background-position: 0% center; }
+          100% { background-position: 200% center; }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+          from { opacity: 0; transform: translateY(-15px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(15px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomIn {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+      </style>
+
+      <div class="banner">
+        <div class="grid"></div>
+        <div class="orb1"></div>
+        <div class="orb2"></div>
+
+        <!-- Terminal Code Columns -->
+        <div class="code-col">01011001 01110011 01110011</div>
+        <div class="code-col">kubectl apply -f deployment.yaml</div>
+        <div class="code-col">docker compose up -d --build</div>
+        <div class="code-col">git commit -m "feat: cloud infra"</div>
+        <div class="code-col">sudo ufw allow 443/tcp</div>
+        <div class="code-col">terraform init &amp;&amp; apply</div>
+        <div class="code-col">AWS Cloud Architecture Stack</div>
+
+        <div class="scanline"></div>
+
+        <div class="content">
+          <div class="prompt">
+            <span class="prompt-sym">❯</span>
+            <span class="prompt-path">~/lucas-angoloti</span>
+            <span class="prompt-branch">git:(main)</span>
+            <span style="color: #58a6ff;">●</span>
+          </div>
+
+          <div class="name">Lucas Angoloti</div>
+
+          <div class="roles">
+            <span class="badge badge-devops">⚙ DevOps &amp; SysAdmin</span>
+            <span class="badge badge-cloud">☁ Cloud Infrastructure</span>
+            <span class="badge badge-security">🔐 Cybersecurity</span>
+          </div>
+
+          <div class="status">
+            <span class="status-item"><span class="status-dot"></span>Prácticas Enero</span>
+            <span class="status-sep">|</span>
+            <span class="status-item">📍 Málaga, España</span>
+            <span class="status-sep">|</span>
+            <span class="status-item">🎓 2º ASIR</span>
+          </div>
+        </div>
+
+        <div class="bottom-bar"></div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
