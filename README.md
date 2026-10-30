@@ -38,6 +38,13 @@ Core Skills:
 
 Objective:
   - Aportar valor técnico desde el primer día en entornos profesionales
+
+Habilities:
+- Resiliencia operativa: Capacidad para rendir al máximo bajo presión y mantener la constancia ante cargas de trabajo exigentes (estudios, deporte de competición y coaching).
+- Liderazgo y gestión de equipos: Experiencia dirigiendo y coordinando grupos bajo objetivos comunes, fomentando la disciplina y el compañerismo.
+- Gestión autónoma del tiempo: Capacidad probada para priorizar tareas complejas, estructurar rutinas diarias y optimizar cada bloque del día sin perder el foco.
+- Resolución práctica de problemas: Enfoque directo y analítico ante imprevistos, buscando soluciones eficientes desde la raíz y con mentalidad autocrítica.
+- Automotivación y disciplina: Compromiso inquebrantable con el esfuerzo diario, la superación personal y la consistencia a largo plazo.
 ```
 
 ---
@@ -65,7 +72,6 @@ Objective:
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](#)
 [![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](#)
 
-> 🔜 Java y C++ — próximamente en mi stack
 
 **🗄 Databases**
 
